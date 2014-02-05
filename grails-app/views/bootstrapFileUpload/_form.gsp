@@ -3,8 +3,10 @@
     <g:hiddenField name="${entry.key}" value="${entry.value}"/>
   </g:each>
 
+  <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
   <div class="fileupload-buttonbar">
-    <div>
+    <div class="fileupload-buttons">
+      <!-- The fileinput-button span is used to style the file input field as button -->
       <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
         <span>${message(code: 'fileupload.add.files', default: 'Add files...')}</span>
@@ -25,19 +27,15 @@
         <span>${message(code: 'fileupload.delete', default: 'Delete')}</span>
       </button>
       <input id="${id}-toggle" type="checkbox" class="toggle">&nbsp;<label style="display:inline" for="${id}-toggle">${message(code: 'fileupload.select.all', default: 'Select all')}</label>
-    </div>
-    <div>
-      <!-- The global progress bar -->
-      <div class="progress progress-success progress-striped active fade" style="margin-bottom:-6px; margin-top:6px;">
-        <div class="bar" style="width:0%;"></div>
-      </div>
+      <!-- The global progress state -->
+      <div class="fileupload-progress fade" style="display:none">
+        <!-- The global progress bar -->
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+          <!-- The extended global progress state -->
+          <div class="progress-extended">&nbsp;</div>
+        </div>
     </div>
   </div>
-  <!-- The loading indicator is shown during image processing -->
-  <div class="fileupload-loading"></div>
-  <br>
-
   ${list}
-
 </form>
 
