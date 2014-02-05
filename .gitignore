@@ -12,6 +12,7 @@ plugin.xml
 devDb.*
 cobertura.ser
 target
+target-eclipse
 .classpath
 .project
 bootstrap-file-upload-grailsPlugins.iml
