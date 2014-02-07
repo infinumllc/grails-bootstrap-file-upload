@@ -14,7 +14,7 @@
   -    limitations under the License.
   --}%
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-<tr class="template-upload fade">
+<tr class="template-upload fade in">
   <td class="preview"><span class="fade"></span></td>
   <td class="name"><span>{%=file.name%}</span></td>
   <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
@@ -36,10 +36,13 @@
     {%=file.error%}
     {% } %}
   </td>
-  {% } else if (o.files.valid && !i) { %}
+  {% } else if (!i) { %}
   <td>
-    <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+    <div class="progress progress-success progress-striped active">
+    	<div class="bar" style="width:0%;"></div>
+    </div>
   </td>
+  <td><i class="icon-upload icon-white"></i>${message(code:'fileupload.start')}</td>
   <td class="start">{% if (!o.options.autoUpload) { %}
     <button class="btn btn-primary">
       <i class="icon-upload icon-white"></i>

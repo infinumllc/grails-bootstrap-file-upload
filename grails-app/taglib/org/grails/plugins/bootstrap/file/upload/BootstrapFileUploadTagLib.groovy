@@ -146,7 +146,7 @@ class BootstrapFileUploadTagLib {
         } catch (GrailsTagException exc) {
             renderedList = render(template: "/bootstrapFileUpload/list", model: [filesContainer: filesContainer], plugin: 'bootstrap-file-upload').toString()
         }
-
+				
         def model = [
                 id: id,
                 url: url,
@@ -158,6 +158,7 @@ class BootstrapFileUploadTagLib {
                 filesContainer: filesContainer,
                 autoUpload: autoUpload
         ]
+		
         try {
             out << render(template: "/bootstrapFileUpload/form", model: model)
         } catch(GrailsTagException exc) {
@@ -212,7 +213,7 @@ class BootstrapFileUploadTagLib {
                     \$('#${id}').each(function () {
                         var that = this;
                         \$.getJSON(this.action, ${formData ? '{' + formData.collect{k,v->k+':'+'\''+v+'\''}.join(',') + '}' : '{}'}, function (result) {
-                            if (result && result.length) {
+							if (result && result.files.length) {
                                 \$(that).fileupload('option', 'done').call(that, null, {result: result});
                             }
                         });
@@ -232,7 +233,8 @@ class BootstrapFileUploadTagLib {
         } catch (GrailsTagException exc) {
             out << render(template: "/bootstrapFileUpload/upload", plugin: "bootstrap-file-upload", model: [autoUpload: autoUpload])
         }
-
+		
+		
         out << """
 </script>
 <!-- The template to display files available for download -->

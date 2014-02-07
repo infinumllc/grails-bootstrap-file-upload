@@ -14,7 +14,7 @@
   -    limitations under the License.
   --}%
 {% for (var i=0, file; file=o.files[i]; i++) { %}
-<tr class="template-download fade">
+<tr class="template-download fade in">
   {% if (file.error) { %}
   <td></td>
   <td class="name"><span>{%=file.name%}</span></td>
@@ -37,18 +37,18 @@
     {% } %}
   </td>
   {% } else { %}
-  <td class="preview">{% if (file.thumbnail_url) { %}
-    <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+  <td class="preview">{% if (file.thumbnailUrl) { %}
+    <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnailUrl%}"></a>
     {% } %}</td>
   <td class="name">
-    <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+    <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnailUrl&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
   </td>
   <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
   <td colspan="2"></td>
   {% } %}
 
   <td class="delete">
-    <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+    <button class="btn btn-danger" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}">
       <i class="icon-trash icon-white"></i>
       <span>${message(code:'fileupload.destroy')}</span>
     </button>

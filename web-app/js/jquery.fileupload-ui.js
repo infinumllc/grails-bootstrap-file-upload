@@ -72,7 +72,7 @@
 
             // Callback to retrieve the list of files from the server response:
             getFilesFromResponse: function (data) {
-                if (data.result && $.isArray(data.result.files)) {
+            	if (data.result && $.isArray(data.result.files)) {
                     return data.result.files;
                 }
                 return [];
@@ -152,8 +152,10 @@
             },
             // Callback for successful uploads:
             done: function (e, data) {
-                if (e.isDefaultPrevented()) {
-                    return false;
+                if (e !== null){
+	            	if (e.isDefaultPrevented()) {
+	                    return false;
+	                }
                 }
                 var that = $(this).data('blueimp-fileupload') ||
                         $(this).data('fileupload'),
@@ -369,10 +371,13 @@
                             }
                         );
                     };
+
                 if (data.url) {
-                    data.dataType = data.dataType || that.options.dataType;
+                	data.method="DELETE";
+                	console.log(data);
                     $.ajax(data).done(removeNode).fail(function () {
-                        that._trigger('destroyfailed', e, data);
+                        console.log(arguments);
+                    	that._trigger('destroyfailed', e, data);
                     });
                 } else {
                     removeNode();
@@ -530,10 +535,13 @@
 
         _deleteHandler: function (e) {
             e.preventDefault();
-            var button = $(e.currentTarget);
+            var target = $(e.currentTarget);
+            var button = target.children('button');
             this._trigger('destroy', e, $.extend({
-                context: button.closest('.template-download'),
-                type: 'DELETE'
+                context: target.closest('.template-download'),
+                type: 'DELETE',
+                url: button.attr('data-url'),
+                dataType: 'json'
             }, button.data()));
         },
 
@@ -544,7 +552,7 @@
 
         _transition: function (node) {
             var dfd = $.Deferred();
-            if ($.support.transition && node.hasClass('fade') && node.is(':visible')) {
+            if ($.support.transition && node.hasClass('fade')) {
                 node.bind(
                     $.support.transition.end,
                     function (e) {
