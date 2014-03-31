@@ -69,19 +69,19 @@ modules = {
 
 		resource url: [plugin: 'bootstrap-file-upload', dir: 'css', file: 'blueimp-gallery.css']
 		//resource url: [plugin: 'bootstrap-file-upload', dir: 'css', file: 'bootstrap-image-gallery.css']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'bootstrap-image-gallery.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'bootstrap-image-gallery.js', disposition: 'defer']
 	}
 
 	'blueimp-templates' {
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'tmpl.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'tmpl.js', disposition: 'defer']
 	}
 
 	'blueimp-load-image' {
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'load-image.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'load-image.js', disposition: 'defer']
 	}
 
 	'blueimp-canvas-to-blob' {
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'canvas-to-blob.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'canvas-to-blob.js', disposition: 'defer']
 	}
 
 	'bootstrap-file-upload' {
@@ -90,15 +90,15 @@ modules = {
 		resource url: [plugin: 'bootstrap-file-upload', dir: 'css', file: 'jquery.fileupload-ui.css']
 		resource url: [plugin: 'bootstrap-file-upload', dir: 'css', file: 'jquery.fileupload.css']
 
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.ui.widget.js'] // included in jquery-ui plugin
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.iframe-transport.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.migrate.min.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.iframe-transport.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-process.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-validate.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.ui.widget.js', disposition: 'defer'] // included in jquery-ui plugin
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.iframe-transport.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.migrate.min.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.iframe-transport.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-process.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-validate.js', disposition: 'defer']
 		//resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-ip.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-ui.js']
-		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-jquery-ui.js']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-ui.js', disposition: 'defer']
+		resource url: [plugin: 'bootstrap-file-upload', dir: 'js', file: 'jquery.fileupload-jquery-ui.js', disposition: 'defer']
 	}
 }
