@@ -374,7 +374,6 @@
 
                 if (data.url) {
                 	data.method="DELETE";
-                	console.log(data);
                     $.ajax(data).done(removeNode).fail(function () {
                         console.log(arguments);
                     	that._trigger('destroyfailed', e, data);
