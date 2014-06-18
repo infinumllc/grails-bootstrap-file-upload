@@ -17,3 +17,5 @@ target-eclipse
 .project
 bootstrap-file-upload-grailsPlugins.iml
 bootstrap-file-upload.iws
+*.zip
+*.zip.sha1
